@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alyssa Serignese — Marketing &amp; Operations</title>
+  <meta name="description" content="Marketing and operations for small businesses. Central Otago, remote.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F5F1E8;
+      --bg-alt: #EFEADE;
+      --text: #1F1D1A;
+      --muted: #7A756A;
+      --subtle: #B0AA9E;
+      --accent: #2E4B3F;
+      --ochre: #B08040;
+      --border: #E0D9C8;
+    }
+
+    html {
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Instrument Sans', system-ui, -apple-system, sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      font-weight: 400;
+    }
+
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* Header */
+    header {
+      padding: 40px 0 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .brand {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+
+    nav {
+      display: flex;
+      gap: 32px;
+      font-size: 14px;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    nav a:hover { color: var(--accent); }
+
+    /* Hero */
+    .hero {
+      padding: 72px 0 88px;
+      max-width: 680px;
+    }
+
+    .hero-kicker {
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+
+    .hero-kicker::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--ochre);
+      vertical-align: middle;
+      margin-right: 14px;
+      margin-bottom: 3px;
+    }
+
+    .hero h1 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 48px;
+      line-height: 1.1;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      margin-bottom: 32px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-lede {
+      font-size: 19px;
+      line-height: 1.55;
+      color: var(--muted);
+      max-width: 560px;
+    }
+
+    /* Section frame */
+    .section-frame {
+      padding: 80px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-label {
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 56px;
+    }
+
+    .section-label::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--ochre);
+      vertical-align: middle;
+      margin-right: 14px;
+      margin-bottom: 3px;
+    }
+
+    /* Case study */
+    .case {
+      margin-bottom: 112px;
+    }
+
+    .case:last-child { margin-bottom: 0; }
+
+    .case-shape {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .case-index {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-style: italic;
+      font-size: 15px;
+      color: var(--subtle);
+    }
+
+    .case-shape-label {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 24px;
+      color: var(--accent);
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+
+    .case h3 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 34px;
+      line-height: 1.18;
+      font-weight: 400;
+      letter-spacing: -0.015em;
+      margin-bottom: 14px;
+    }
+
+    .case-meta {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .case-overview {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 48px;
+    }
+
+    .case h4 {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 500;
+      margin: 48px 0 24px;
+    }
+
+    .case h4:first-of-type { margin-top: 0; }
+
+    .case > p {
+      margin-bottom: 18px;
+    }
+
+    .did-item {
+      margin-bottom: 28px;
+    }
+
+    .did-item strong {
+      font-weight: 500;
+      color: var(--text);
+      display: block;
+      margin-bottom: 6px;
+      font-size: 16px;
+    }
+
+    .did-item p {
+      color: var(--text);
+    }
+
+    /* Metrics grid */
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-bottom: 40px;
+    }
+
+    .metric {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 22px 24px;
+    }
+
+    .metric-label {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .metric-value {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 28px;
+      line-height: 1.1;
+      color: var(--accent);
+      margin-bottom: 10px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+
+    .metric-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* Approach pullquote */
+    .approach {
+      padding: 32px 0 8px;
+      margin-top: 20px;
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 32px;
+    }
+
+    .approach-label {
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-top: 8px;
+    }
+
+    .approach blockquote {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-style: italic;
+      font-size: 22px;
+      line-height: 1.4;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    /* AI section */
+    .ai h2 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 36px;
+      line-height: 1.15;
+      font-weight: 400;
+      letter-spacing: -0.015em;
+      margin-bottom: 24px;
+      max-width: 560px;
+    }
+
+    .ai-intro {
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 620px;
+      margin-bottom: 40px;
+    }
+
+    .ai-list {
+      list-style: none;
+      margin-bottom: 40px;
+    }
+
+    .ai-list li {
+      padding: 20px 0;
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 32px;
+    }
+
+    .ai-list li:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .ai-list strong {
+      font-weight: 500;
+      color: var(--text);
+      font-size: 16px;
+    }
+
+    .ai-list span {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .ai-note {
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 620px;
+    }
+
+    /* Contact */
+    .contact-section {
+      padding: 96px 0 80px;
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-section h2 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 44px;
+      line-height: 1.1;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .contact-section h2 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .contact-section p {
+      font-size: 18px;
+      color: var(--muted);
+      margin-bottom: 40px;
+      max-width: 560px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .contact-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 17px;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 3px;
+      transition: color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .contact-links a:hover {
+      color: var(--ochre);
+      border-color: var(--ochre);
+    }
+
+    /* Footer */
+    footer {
+      padding: 32px 0 40px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    /* Mobile */
+    @media (max-width: 720px) {
+      .page { padding: 0 24px; }
+      header { padding: 32px 0 24px; }
+      nav { gap: 24px; font-size: 13px; }
+
+      .hero { padding: 48px 0 64px; }
+      .hero h1 { font-size: 34px; }
+      .hero-lede { font-size: 17px; }
+
+      .section-frame { padding: 56px 0; }
+      .section-label { margin-bottom: 40px; }
+
+      .case { margin-bottom: 72px; }
+      .case h3 { font-size: 26px; }
+      .case-shape-label { font-size: 20px; }
+      .case-overview { font-size: 16px; margin-bottom: 36px; }
+
+      .metrics { grid-template-columns: 1fr; }
+
+      .approach {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .approach blockquote { font-size: 19px; }
+
+      .ai h2 { font-size: 28px; }
+      .ai-intro { font-size: 16px; }
+      .ai-list li {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .contact-section { padding: 64px 0 56px; }
+      .contact-section h2 { font-size: 32px; }
+      .contact-section p { font-size: 16px; }
+
+      footer { flex-direction: column; gap: 8px; }
+    }
+
+    @media (max-width: 420px) {
+      nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">Alyssa Serignese</div>
+      <nav>
+        <a href="#work">Work</a>
+        <a href="#ai">AI</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <p class="hero-kicker">Marketing &amp; Operations</p>
+      <h1>Hi, I'm Alyssa. I help small businesses do the work <em>behind</em> the marketing.</h1>
+      <p class="hero-lede">The systems, the coordination, the follow-through. My favourite projects are the messy ones: broken processes, plans that don't exist yet, events that haven't been run before.</p>
+    </section>
+
+    <section class="section-frame" id="work">
+      <p class="section-label">Recent work</p>
+
+      <!-- Case 01: Central App -->
+      <article class="case">
+        <div class="case-shape">
+          <span class="case-index">01.</span>
+          <span class="case-shape-label">Fix a mess</span>
+        </div>
+        <h3>Rebuilding the operational plumbing at The Central App</h3>
+        <p class="case-meta">Marketing &amp; Operations Manager · Remote from Central Otago · 2025–present</p>
+        <p class="case-overview">Central Otago's leading community news platform reaches over 800,000 monthly page views and 60,000 downloads. The audience side was strong. The systems behind it were held together by manual work and a couple of people's memories.</p>
+
+        <h4>The situation</h4>
+        <p>HubSpot data lived at the contact level, so there was no clean way to see a customer's full relationship with the business. Ads expired without visibility, which meant we often found out after the fact. The inventory tracker was an Excel sheet even long-timers found confusing. There was no reliable customer list, no documented onboarding or offboarding for advertisers, and reporters couldn't see how their own stories were performing.</p>
+        <p>Billing errors dripped through the month and got caught only when someone noticed.</p>
+
+        <h4>What I did</h4>
+        <div class="did-item">
+          <strong>Restructured the CRM and sales pipeline</strong>
+          <p>Rebuilt HubSpot around companies rather than contacts, so every customer relationship is visible in one place. Set up a deals pipeline that reflects how the business actually sells.</p>
+        </div>
+        <div class="did-item">
+          <strong>Automated what was manual</strong>
+          <p>Set up Broadstreet expiry automation so we know before ads lapse, not after. Built a monthly reconciliation between Xero and the internal inventory tracker to catch billing errors in one pass rather than chasing them through the month.</p>
+        </div>
+        <div class="did-item">
+          <strong>Made performance visible</strong>
+          <p>Built Looker Studio dashboards for the editorial team, giving reporters a weekly view of how their stories are actually performing. Set up quarterly client ad reports so the sales team has a concrete touchpoint moment for each customer.</p>
+        </div>
+        <div class="did-item">
+          <strong>Documented the tacit knowledge</strong>
+          <p>Wrote onboarding and offboarding SOPs for advertisers, plus archive and naming conventions across the shared drives, so nothing depends on one person's memory.</p>
+        </div>
+        <div class="did-item">
+          <strong>Brought AI into the daily workflow</strong>
+          <p>Set up Gemini gems the team now uses daily: one for writing better meta titles and descriptions, another for turning PR releases into publishable news copy. Both get used on every article.</p>
+        </div>
+
+        <h4>What changed</h4>
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric-label">Monthly reconciliation</div>
+            <div class="metric-value">Hours saved</div>
+            <div class="metric-desc">Errors caught in one pass rather than drip-fed through the month.</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Billing accuracy</div>
+            <div class="metric-value">100%</div>
+            <div class="metric-desc">Hidden errors surfaced, rate mismatches corrected, contact data cleaned.</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Team adoption</div>
+            <div class="metric-value">Weekly use</div>
+            <div class="metric-desc">Reporters check Looker Studio dashboards to see how stories are performing.</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Click-through rate</div>
+            <div class="metric-value">Lifted</div>
+            <div class="metric-desc">AI-assisted meta titles and descriptions used on every article.</div>
+          </div>
+        </div>
+
+        <div class="approach">
+          <p class="approach-label">How I approach it</p>
+          <blockquote>"I'd ask team members what the end goal was and what would make their day easier, then work backwards from there. Systems that solve problems no one has aren't worth building."</blockquote>
+        </div>
+      </article>
+
+      <!-- Case 02: Work Happy -->
+      <article class="case">
+        <div class="case-shape">
+          <span class="case-index">02.</span>
+          <span class="case-shape-label">Build from nothing</span>
+        </div>
+        <h3>A 12-month launch plan for a founder who doesn't speak marketing</h3>
+        <p class="case-meta">Freelance strategy · Australian small-business services client · 2026</p>
+        <p class="case-overview">A founder-led business preparing to launch a new B2B service into the Australian small-business market. Strong vision, no marketer in the team, no plan yet. My brief was Phase 1 of a go-to-market strategy for the CEO to review.</p>
+
+        <h4>The situation</h4>
+        <p>The client came to me with a brain dump: what the product was, who it was for, ambitious client acquisition targets, and a rough sense of what "launch" should feel like. That was it. No positioning framework, no channel strategy, no timeline, no budget shape, and no marketer inside the business to shape the work.</p>
+        <p>The other real constraint: the CEO isn't a marketer and doesn't want to be. A plan that only made sense to another marketer would fail on delivery. The final document had to be structured enough for the team to execute against, and readable enough for a non-marketer CEO to sign off on with genuine understanding.</p>
+
+        <h4>What I did</h4>
+        <div class="did-item">
+          <strong>Structured the brain dump into a real plan</strong>
+          <p>Took the raw material and turned it into a 12-month, three-phase launch spanning awareness and warm activation, growth and conversion, and ongoing compounding activity. Presented as a Gantt-style overview so the whole year is visible at a glance.</p>
+        </div>
+        <div class="did-item">
+          <strong>Chose channels for how the audience actually behaves</strong>
+          <p>Recommended an interactive quiz over a static whitepaper because founders won't finish a whitepaper. Recommended problem-aware search terms over broad category ones because the category isn't yet one people search for by name. Recommended founder peer community speaking slots over cold outreach because the return on time is significantly higher. Every channel choice reflected who the audience is and how they behave.</p>
+        </div>
+        <div class="did-item">
+          <strong>Sequenced for compounding effect</strong>
+          <p>SEO and organic content running quietly from day one, so it's paying off by mid-year when the launch-critical activities peak. Paid LinkedIn built on top of already-published organic content rather than boosting from cold. Google Ads timed to build toward the biggest lead generation event of the year, not run flat.</p>
+        </div>
+        <div class="did-item">
+          <strong>Wrote the plan for a non-marketer to defend</strong>
+          <p>Included plain-language descriptions of every initiative in the plan itself. Not just what each activity is, but why it belongs in this phase, what it depends on, and what it's meant to produce. The CEO can now read the plan and understand the strategy without needing me in the room.</p>
+        </div>
+        <div class="did-item">
+          <strong>Made clear what wasn't in scope, and why</strong>
+          <p>A software marketplace integration the client had raised as an early idea got flagged as a future goal rather than a Phase 2 activity, because it needs product development resource before marketing can do anything with it.</p>
+        </div>
+
+        <h4>What changed</h4>
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric-label">Delivered</div>
+            <div class="metric-value">Phase 1 plan</div>
+            <div class="metric-desc">Complete 12-month go-to-market strategy with channel rationale and initiative-level detail.</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Sign-off</div>
+            <div class="metric-value">Approved</div>
+            <div class="metric-desc">Reviewed and signed off by the CEO with the plan understood, not just accepted.</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Scope</div>
+            <div class="metric-value">3 phases</div>
+            <div class="metric-desc">Awareness, growth and conversion, and ongoing compounding activity.</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Team</div>
+            <div class="metric-value">In execution</div>
+            <div class="metric-desc">Internal team now working from a single reference document that keeps activities on track.</div>
+          </div>
+        </div>
+
+        <div class="approach">
+          <p class="approach-label">How I approach it</p>
+          <blockquote>"A big part of the job on projects like this is translation. Non-marketer clients need to understand why the plan looks the way it does, not just what's in it. If they can't defend it back to their own team, it doesn't launch."</blockquote>
+        </div>
+      </article>
+
+      <!-- Case 03: CR&F Summit -->
+      <article class="case">
+        <div class="case-shape">
+          <span class="case-index">03.</span>
+          <span class="case-shape-label">Deliver end to end</span>
+        </div>
+        <h3>New Zealand's first Credit Risk and Fraud Summit</h3>
+        <p class="case-meta">Freelance project + marketing · CR&amp;F Summit 2026 · NZ credit risk client · 12-month build to launch</p>
+        <p class="case-overview">A New Zealand credit risk business wanted to establish the country's first national industry summit for credit risk and fraud specialists. My brief was end-to-end: build the brand, run the marketing programme, manage sponsors, learn the event tech, and coordinate with the external events management team.</p>
+
+        <h4>The situation</h4>
+        <p>Nothing existed yet. No brand, no site, no reputation, no template. The ambition was to establish a national industry event in a sector that had never had one, and to make it feel like a community moment rather than a company-branded conference.</p>
+        <p>That was the strategic tightrope. The client was funding and hosting the summit but deliberately didn't want to be branded as the host. The event needed to feel like an industry moment the community owned, not corporate marketing for the client. Every piece of copy, every LinkedIn post, every design decision had to hold that line.</p>
+
+        <h4>What I did</h4>
+        <div class="did-item">
+          <strong>Ran the marketing programme end to end</strong>
+          <p>LinkedIn content calendar (46 posts over 12 months), website content and structure, EDM programme, sponsor communications, and post-event review. This was the marketing function for the event, delivered as one person.</p>
+        </div>
+        <div class="did-item">
+          <strong>Managed 13 sponsors across five tiers</strong>
+          <p>Platinum through community-level sponsors, including onboarding, asset collection, LinkedIn coverage, on-site materials, and post-event reporting. Coordinated closely with the client's internal lead who owned relationships.</p>
+        </div>
+        <div class="did-item">
+          <strong>Learned EventsAir from scratch</strong>
+          <p>The event ran on a specialist events platform I'd never used before. I picked it up, set up registrations, ran delegate communications, and had it operating smoothly by launch.</p>
+        </div>
+        <div class="did-item">
+          <strong>Partnered with a designer to build a cohesive brand</strong>
+          <p>Worked with an external designer on a full identity system covering lanyards, presentation templates, wayfinding, exhibitor booth signage, registration desk, table cards, and event collateral. On-site brand consistency was one of the strongest pieces of delegate feedback.</p>
+        </div>
+        <div class="did-item">
+          <strong>Coordinated with the external events management team</strong>
+          <p>Seven Events ran the physical event delivery. My role was to keep the marketing, digital, and brand streams aligned with theirs so nothing fell through the gaps between agencies.</p>
+        </div>
+        <div class="did-item">
+          <strong>Held the "host but not host" messaging line</strong>
+          <p>Every LinkedIn post, every announcement, every piece of copy reinforced the summit as a community event. Community-first content ("Meet the Events Committee") outperformed everything else by a wide margin, which validated the strategic call.</p>
+        </div>
+
+        <h4>What changed</h4>
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric-label">Registrations</div>
+            <div class="metric-value">139 delegates</div>
+            <div class="metric-desc">47 organisations represented across a three-day summit in Napier.</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">LinkedIn campaign</div>
+            <div class="metric-value">33.5k reach</div>
+            <div class="metric-desc">46 posts, 10% average engagement rate, 298 new followers over the campaign.</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Trans-Tasman reach</div>
+            <div class="metric-value">NZ + AU</div>
+            <div class="metric-desc">6,414 sessions over the campaign, 1,100+ AU users across four cities.</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">2027 summit</div>
+            <div class="metric-value">Announced</div>
+            <div class="metric-desc">Second edition confirmed off the back of 2026's reception.</div>
+          </div>
+        </div>
+
+        <div class="approach">
+          <p class="approach-label">How I approach it</p>
+          <blockquote>"When the strategy works, it's invisible. Keeping the client out of the frame was the right call, and every piece of marketing had to protect it. You just look like a community, which was the whole point."</blockquote>
+        </div>
+      </article>
+    </section>
+
+    <section class="section-frame ai" id="ai">
+      <p class="section-label">Working with AI</p>
+      <h2>AI is part of how I work now, not something separate from it.</h2>
+      <p class="ai-intro">It shows up in the day-to-day like this:</p>
+
+      <ul class="ai-list">
+        <li>
+          <strong>Meta &amp; content optimisation</strong>
+          <span>Gemini gems set up for the editorial team at The Central App, one for meta titles and descriptions, another for turning PR into news copy. Used on every article.</span>
+        </li>
+        <li>
+          <strong>First-pass drafting</strong>
+          <span>Long-form content, client emails, campaign copy. Draft with AI, refine into voice.</span>
+        </li>
+        <li>
+          <strong>Research &amp; synthesis</strong>
+          <span>Competitive scans, sector research, digesting long documents. Full afternoons compressed into an hour.</span>
+        </li>
+        <li>
+          <strong>Custom tools &amp; automation</strong>
+          <span>Google Apps Scripts built with AI assistance for calendar sync, data pulling, and reporting.</span>
+        </li>
+      </ul>
+
+      <p class="ai-note">Staying current means treating it as a habit, not a project. Completed SEMrush's AI Visibility Certification covering AEO and GEO. Regular hands-on experimentation with new tools as they come out, so I know what actually changes the work before recommending anything.</p>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <h2>Let's <em>talk</em>.</h2>
+      <p>Looking for someone to run marketing, operations, or a specific project? Or want to chat about a role? I'd love to hear from you.</p>
+      <div class="contact-links">
+        <a href="mailto:alyssaserignese@gmail.com">alyssaserignese@gmail.com</a>
+        <a href="https://linkedin.com/in/alyssaserignese" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://alyssaserignese-boop.github.io/alyssa-portfolio/" target="_blank" rel="noopener">SEO &amp; AEO portfolio</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>Alyssa Serignese · Central Otago, NZ</p>
+      <p>© 2026</p>
+    </footer>
+  </div>
+</body>
+</html>
