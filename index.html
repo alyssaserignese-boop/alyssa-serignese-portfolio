@@ -403,6 +403,483 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
+      gap: 24px;
+    }
+
+    .footer-ai {
+      font-style: italic;
+      color: var(--subtle);
+      text-align: center;
+      flex: 1;
+    }
+
+    /* Figure & Gantt */
+    .figure {
+      margin: 40px 0;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 28px 28px 20px;
+    }
+
+    .figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--border);
+    }
+
+    .figure.figure-image {
+      padding: 20px 20px 16px;
+    }
+
+    .gantt-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .gantt {
+      display: grid;
+      grid-template-columns: 190px repeat(12, minmax(28px, 1fr));
+      gap: 3px 4px;
+      align-items: center;
+    }
+
+    .gantt-quarter {
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 0 0 6px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 8px;
+    }
+
+    .gantt-month {
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding-bottom: 14px;
+      position: relative;
+    }
+
+    .gantt-month.qb::after {
+      content: '';
+      position: absolute;
+      right: -2px;
+      top: 0;
+      bottom: 14px;
+      width: 1px;
+      background: var(--border);
+    }
+
+    .gantt-phase-label {
+      grid-column: 1 / -1;
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-style: italic;
+      font-size: 17px;
+      padding: 14px 14px 10px;
+      margin-top: 8px;
+      border-left: 3px solid;
+      letter-spacing: -0.005em;
+      background: linear-gradient(to right, rgba(46,75,63,0.04), transparent 60%);
+    }
+
+    .gantt-phase-1 {
+      color: var(--accent);
+      border-left-color: var(--accent);
+    }
+
+    .gantt-phase-2 {
+      color: var(--ochre);
+      border-left-color: var(--ochre);
+      background: linear-gradient(to right, rgba(176,128,64,0.05), transparent 60%);
+    }
+
+    .gantt-phase-ongoing {
+      color: var(--muted);
+      border-left-color: var(--muted);
+      background: linear-gradient(to right, rgba(122,117,106,0.04), transparent 60%);
+    }
+
+    .gantt-phase-future {
+      color: var(--subtle);
+      border-left-color: var(--subtle);
+      background: transparent;
+    }
+
+    .gantt-label {
+      font-size: 13px;
+      color: var(--text);
+      padding: 6px 12px 6px 0;
+      line-height: 1.35;
+    }
+
+    .gantt-bar {
+      height: 10px;
+      align-self: center;
+    }
+
+    .gantt-bar.b-phase-1 { background: var(--accent); }
+    .gantt-bar.b-phase-2 { background: var(--ochre); }
+    .gantt-bar.b-ongoing { background: var(--muted); opacity: 0.5; }
+    .gantt-bar.b-future {
+      border: 1px dashed var(--subtle);
+      height: 6px;
+      background: transparent;
+    }
+
+    .gantt-milestone {
+      width: 12px;
+      height: 12px;
+      background: var(--ochre);
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      margin: 0 auto;
+      align-self: center;
+      justify-self: center;
+    }
+
+    .gantt-milestone.m-ongoing {
+      background: var(--muted);
+      opacity: 0.7;
+      width: 9px;
+      height: 9px;
+    }
+
+    .gantt-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding-top: 20px;
+      margin-top: 12px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+
+    .gantt-legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .gantt-legend-swatch {
+      width: 20px;
+      height: 6px;
+      flex-shrink: 0;
+    }
+
+    .gantt-legend-swatch.b-phase-1 { background: var(--accent); }
+    .gantt-legend-swatch.b-phase-2 { background: var(--ochre); }
+    .gantt-legend-swatch.b-ongoing { background: var(--muted); opacity: 0.5; }
+    .gantt-legend-swatch.b-future {
+      border: 1px dashed var(--subtle);
+      height: 4px;
+      background: transparent;
+    }
+    .gantt-legend-swatch.b-milestone {
+      background: var(--ochre);
+      width: 10px;
+      height: 10px;
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    }
+
+    figcaption {
+      font-size: 13px;
+      color: var(--muted);
+      font-style: italic;
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      line-height: 1.55;
+    }
+
+    /* LinkedIn chart */
+    .linkedin-chart {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .chart-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .chart-stat-value {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 26px;
+      color: var(--accent);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+
+    .chart-stat-label {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .chart-body {
+      position: relative;
+    }
+
+    .chart-callout {
+      position: absolute;
+      top: 0;
+      right: 0;
+      max-width: 200px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--ochre);
+      padding: 12px 14px;
+      z-index: 2;
+      font-size: 13px;
+    }
+
+    .chart-callout-label {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .chart-callout-text {
+      color: var(--text);
+      line-height: 1.4;
+      font-weight: 500;
+    }
+
+    .chart-callout-text span {
+      display: block;
+      font-weight: 400;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    .chart-bars {
+      display: grid;
+      grid-template-columns: repeat(13, 1fr);
+      gap: 6px;
+      height: 220px;
+      align-items: end;
+      position: relative;
+      padding-top: 16px;
+    }
+
+    .chart-bar-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      justify-content: flex-end;
+    }
+
+    .chart-bar {
+      width: 100%;
+      background: var(--accent);
+      opacity: 0.45;
+      min-height: 4px;
+    }
+
+    .chart-bar.highlight {
+      background: var(--ochre);
+      opacity: 1;
+    }
+
+    .chart-month {
+      font-size: 10px;
+      color: var(--muted);
+      text-align: center;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      line-height: 1.3;
+      margin-top: 10px;
+    }
+
+    .chart-month span {
+      color: var(--subtle);
+      font-size: 9px;
+    }
+
+    .chart-note {
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--muted);
+      padding: 16px 18px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+    }
+
+    .chart-note-label {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    /* CRM mockup */
+    .crm-mock {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .crm-header {
+      padding: 20px 20px 0;
+    }
+
+    .crm-title {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 18px;
+      letter-spacing: -0.01em;
+    }
+
+    .crm-title span {
+      color: var(--subtle);
+      margin: 0 6px;
+    }
+
+    .crm-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: -1px;
+      overflow-x: auto;
+    }
+
+    .crm-tab {
+      padding: 8px 12px;
+      font-size: 12px;
+      color: var(--muted);
+      border-bottom: 2px solid transparent;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .crm-tab.active {
+      color: var(--text);
+      border-bottom-color: var(--accent);
+      font-weight: 500;
+    }
+
+    .crm-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border-top: 1px solid var(--border);
+    }
+
+    .crm-metric {
+      background: var(--bg);
+      padding: 16px 18px;
+    }
+
+    .crm-metric-label {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .crm-metric-value {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 26px;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+      line-height: 1;
+    }
+
+    .crm-table-header,
+    .crm-table-row {
+      display: grid;
+      grid-template-columns: 1.8fr 0.5fr 1fr 2.2fr;
+      gap: 12px;
+      padding: 12px 18px;
+      align-items: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .crm-table-header {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: var(--bg-alt);
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .crm-co {
+      color: var(--text);
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    .crm-owner {
+      color: var(--muted);
+      font-size: 12px;
+      font-family: 'Instrument Sans', sans-serif;
+      letter-spacing: 0.05em;
+    }
+
+    .crm-date {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .crm-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .crm-tag {
+      font-size: 10px;
+      padding: 3px 8px;
+      letter-spacing: 0.02em;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .crm-tag.tag-dark {
+      background: #2A2A28;
+      color: var(--bg);
+    }
+
+    .crm-tag.tag-teal {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    .crm-tag.tag-outline {
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: transparent;
+      padding: 2px 7px;
+    }
+
+    .crm-tag.tag-plain {
+      background: var(--bg-alt);
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 2px 7px;
     }
 
     /* Mobile */
@@ -443,6 +920,32 @@
       .contact-section p { font-size: 16px; }
 
       footer { flex-direction: column; gap: 8px; }
+      .footer-ai { text-align: left; }
+
+      .figure { padding: 20px 20px 16px; }
+      .gantt { min-width: 620px; }
+
+      .chart-stats { grid-template-columns: repeat(2, 1fr); gap: 16px 12px; }
+      .chart-stat-value { font-size: 22px; }
+      .chart-callout {
+        position: static;
+        max-width: none;
+        margin-bottom: 16px;
+      }
+      .chart-bars { height: 160px; gap: 3px; }
+      .chart-month { font-size: 9px; }
+      .chart-note { font-size: 13px; padding: 14px 16px; }
+
+      .crm-metrics { grid-template-columns: repeat(2, 1fr); }
+      .crm-metric-value { font-size: 22px; }
+      .crm-tabs { flex-wrap: nowrap; }
+      .crm-table-header { display: none; }
+      .crm-table-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+      .crm-owner, .crm-date { font-size: 11px; }
+      .gantt-legend { gap: 14px; font-size: 11px; }
     }
 
     @media (max-width: 420px) {
@@ -476,7 +979,7 @@
           <span class="case-index">01.</span>
           <span class="case-shape-label">Fix a mess</span>
         </div>
-        <h3>Rebuilding the operational plumbing at The Central App</h3>
+        <h3>Rebuilding the operational systems at The Central App</h3>
         <p class="case-meta">Marketing &amp; Operations Manager · Remote from Central Otago · 2025–present</p>
         <p class="case-overview">Central Otago's leading community news platform reaches over 800,000 monthly page views and 60,000 downloads. The audience side was strong. The systems behind it were held together by manual work and a couple of people's memories.</p>
 
@@ -505,6 +1008,126 @@
           <strong>Brought AI into the daily workflow</strong>
           <p>Set up Gemini gems the team now uses daily: one for writing better meta titles and descriptions, another for turning PR releases into publishable news copy. Both get used on every article.</p>
         </div>
+
+        <figure class="figure">
+          <div class="crm-mock">
+            <div class="crm-header">
+              <div class="crm-title">Companies <span>·</span> A Clients</div>
+              <div class="crm-tabs">
+                <span class="crm-tab">All</span>
+                <span class="crm-tab active">A Clients</span>
+                <span class="crm-tab">Advisors</span>
+                <span class="crm-tab">Target Plus</span>
+                <span class="crm-tab">Anchor</span>
+                <span class="crm-tab">Bespoke</span>
+                <span class="crm-tab">Local Focus</span>
+                <span class="crm-tab">Job Listings</span>
+                <span class="crm-tab">Events</span>
+                <span class="crm-tab">Leads</span>
+              </div>
+            </div>
+
+            <div class="crm-metrics">
+              <div class="crm-metric">
+                <div class="crm-metric-label">Avg contacts per company</div>
+                <div class="crm-metric-value">2.9</div>
+              </div>
+              <div class="crm-metric">
+                <div class="crm-metric-label">No recent comms</div>
+                <div class="crm-metric-value">8</div>
+              </div>
+              <div class="crm-metric">
+                <div class="crm-metric-label">Avg touchpoints logged</div>
+                <div class="crm-metric-value">10.4</div>
+              </div>
+              <div class="crm-metric">
+                <div class="crm-metric-label">Needs review</div>
+                <div class="crm-metric-value">9</div>
+              </div>
+            </div>
+
+            <div class="crm-table">
+              <div class="crm-table-header">
+                <span>Company</span>
+                <span>Owner</span>
+                <span>Last activity</span>
+                <span>Advertisement level</span>
+              </div>
+
+              <div class="crm-table-row">
+                <span class="crm-co">Alpine Trades Group</span>
+                <span class="crm-owner">LM</span>
+                <span class="crm-date">9 Jul 2026</span>
+                <span class="crm-tags">
+                  <span class="crm-tag tag-dark">Bespoke</span>
+                </span>
+              </div>
+
+              <div class="crm-table-row">
+                <span class="crm-co">Ridge Advisory Group</span>
+                <span class="crm-owner">AS</span>
+                <span class="crm-date">2 Jul 2026</span>
+                <span class="crm-tags">
+                  <span class="crm-tag tag-teal">Local Focus</span>
+                  <span class="crm-tag tag-dark">Bespoke</span>
+                  <span class="crm-tag tag-outline">Advisor</span>
+                </span>
+              </div>
+
+              <div class="crm-table-row">
+                <span class="crm-co">Central Otago Farms Co.</span>
+                <span class="crm-owner">SD</span>
+                <span class="crm-date">30 Jun 2026</span>
+                <span class="crm-tags">
+                  <span class="crm-tag tag-outline">Advisor</span>
+                  <span class="crm-tag tag-dark">Bespoke</span>
+                </span>
+              </div>
+
+              <div class="crm-table-row">
+                <span class="crm-co">Cromwell Property Group</span>
+                <span class="crm-owner">LM</span>
+                <span class="crm-date">27 May 2026</span>
+                <span class="crm-tags">
+                  <span class="crm-tag tag-teal">Local Focus</span>
+                  <span class="crm-tag tag-dark">Bespoke</span>
+                </span>
+              </div>
+
+              <div class="crm-table-row">
+                <span class="crm-co">Regional Energy Ltd</span>
+                <span class="crm-owner">SD</span>
+                <span class="crm-date">21 May 2026</span>
+                <span class="crm-tags">
+                  <span class="crm-tag tag-teal">Local Focus</span>
+                  <span class="crm-tag tag-dark">Bespoke</span>
+                  <span class="crm-tag tag-outline">Advisor</span>
+                  <span class="crm-tag tag-plain">Job Listing</span>
+                </span>
+              </div>
+
+              <div class="crm-table-row">
+                <span class="crm-co">South Coast Retail Co.</span>
+                <span class="crm-owner">LM</span>
+                <span class="crm-date">28 Apr 2026</span>
+                <span class="crm-tags">
+                  <span class="crm-tag tag-teal">Local Focus</span>
+                  <span class="crm-tag tag-dark">Bespoke</span>
+                </span>
+              </div>
+
+              <div class="crm-table-row">
+                <span class="crm-co">Range Rentals</span>
+                <span class="crm-owner">SD</span>
+                <span class="crm-date">3 Feb 2026</span>
+                <span class="crm-tags">
+                  <span class="crm-tag tag-dark">Bespoke</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <figcaption>CRM segmentation view for A-tier clients, one of eleven segmented pipelines in the rebuilt HubSpot workspace. Advertisement-level tagging enables cross-cutting audit of touchpoint frequency and communication cadence across the customer base. Company names anonymised.</figcaption>
+        </figure>
 
         <h4>What changed</h4>
         <div class="metrics">
@@ -571,6 +1194,101 @@
           <strong>Made clear what wasn't in scope, and why</strong>
           <p>A software marketplace integration the client had raised as an early idea got flagged as a future goal rather than a Phase 2 activity, because it needs product development resource before marketing can do anything with it.</p>
         </div>
+
+        <figure class="figure">
+          <div class="gantt-scroll">
+            <div class="gantt" role="img" aria-label="Twelve-month launch plan Gantt chart with quarter markers, three phases, milestones, and beyond-plan indicator">
+              <!-- Quarter markers -->
+              <div></div>
+              <div class="gantt-quarter" style="grid-column: 2 / 5;">Q3 2026</div>
+              <div class="gantt-quarter" style="grid-column: 5 / 8;">Q4 2026</div>
+              <div class="gantt-quarter" style="grid-column: 8 / 11;">Q1 2027</div>
+              <div class="gantt-quarter" style="grid-column: 11 / 14;">Q2 2027</div>
+
+              <!-- Month labels -->
+              <div></div>
+              <div class="gantt-month">Jul</div>
+              <div class="gantt-month">Aug</div>
+              <div class="gantt-month qb">Sep</div>
+              <div class="gantt-month">Oct</div>
+              <div class="gantt-month">Nov</div>
+              <div class="gantt-month qb">Dec</div>
+              <div class="gantt-month">Jan</div>
+              <div class="gantt-month">Feb</div>
+              <div class="gantt-month qb">Mar</div>
+              <div class="gantt-month">Apr</div>
+              <div class="gantt-month">May</div>
+              <div class="gantt-month">Jun</div>
+
+              <!-- Phase 1 -->
+              <div class="gantt-phase-label gantt-phase-1">Phase 1 &nbsp;·&nbsp; Awareness &amp; warm activation</div>
+
+              <div class="gantt-label">6-week email &amp; social story arc</div>
+              <div class="gantt-bar b-phase-1" style="grid-column: 2 / 5;"></div>
+
+              <div class="gantt-label">Podcast guesting</div>
+              <div class="gantt-bar b-phase-1" style="grid-column: 3 / 7;"></div>
+
+              <div class="gantt-label">Interactive lead magnet</div>
+              <div class="gantt-bar b-phase-1" style="grid-column: 3 / 14;"></div>
+
+              <div class="gantt-label">Client advocacy referrals</div>
+              <div class="gantt-bar b-phase-1" style="grid-column: 4 / 7;"></div>
+
+              <div class="gantt-label">Peer community outreach</div>
+              <div class="gantt-bar b-phase-1" style="grid-column: 3 / 7;"></div>
+
+              <!-- Phase 2 -->
+              <div class="gantt-phase-label gantt-phase-2">Phase 2 &nbsp;·&nbsp; Growth &amp; conversion</div>
+
+              <div class="gantt-label">Referral partnerships</div>
+              <div class="gantt-bar b-phase-2" style="grid-column: 5 / 14;"></div>
+
+              <div class="gantt-label">Major industry event</div>
+              <div class="gantt-milestone" style="grid-column: 6;" title="Milestone: single-day activation"></div>
+
+              <div class="gantt-label">Google Ads (problem-aware)</div>
+              <div class="gantt-bar b-phase-2" style="grid-column: 4 / 10;"></div>
+
+              <div class="gantt-label">Regional press &amp; radio</div>
+              <div class="gantt-bar b-phase-2" style="grid-column: 6 / 10;"></div>
+
+              <div class="gantt-label">LinkedIn paid</div>
+              <div class="gantt-bar b-phase-2" style="grid-column: 4 / 8;"></div>
+
+              <!-- Ongoing -->
+              <div class="gantt-phase-label gantt-phase-ongoing">Ongoing &nbsp;·&nbsp; Compounding activity</div>
+
+              <div class="gantt-label">SEO &amp; organic content</div>
+              <div class="gantt-bar b-ongoing" style="grid-column: 2 / 14;"></div>
+
+              <div class="gantt-label">LinkedIn organic</div>
+              <div class="gantt-bar b-ongoing" style="grid-column: 2 / 14;"></div>
+
+              <div class="gantt-label">Association webinar cadence</div>
+              <div class="gantt-milestone m-ongoing" style="grid-column: 4;"></div>
+              <div class="gantt-milestone m-ongoing" style="grid-column: 7;"></div>
+              <div class="gantt-milestone m-ongoing" style="grid-column: 10;"></div>
+              <div class="gantt-milestone m-ongoing" style="grid-column: 13;"></div>
+
+              <!-- Beyond -->
+              <div class="gantt-phase-label gantt-phase-future">Beyond this plan &nbsp;·&nbsp; Deferred to future phase</div>
+
+              <div class="gantt-label" style="color: var(--subtle);">Software marketplace integration</div>
+              <div class="gantt-bar b-future" style="grid-column: 2 / 14;"></div>
+            </div>
+          </div>
+
+          <div class="gantt-legend">
+            <span class="gantt-legend-item"><span class="gantt-legend-swatch b-phase-1"></span>Phase 1</span>
+            <span class="gantt-legend-item"><span class="gantt-legend-swatch b-phase-2"></span>Phase 2</span>
+            <span class="gantt-legend-item"><span class="gantt-legend-swatch b-ongoing"></span>Ongoing</span>
+            <span class="gantt-legend-item"><span class="gantt-legend-swatch b-milestone"></span>Milestone / single-day activation</span>
+            <span class="gantt-legend-item"><span class="gantt-legend-swatch b-future"></span>Beyond scope</span>
+          </div>
+
+          <figcaption>Phase-one launch plan showing three phases across twelve months, with quarterly webinar cadence, a single-day industry activation, and a marketplace integration deferred as a future phase. Client details and specific targets omitted.</figcaption>
+        </figure>
 
         <h4>What changed</h4>
         <div class="metrics">
@@ -642,6 +1360,57 @@
           <p>Every LinkedIn post, every announcement, every piece of copy reinforced the summit as a community event. Community-first content ("Meet the Events Committee") outperformed everything else by a wide margin, which validated the strategic call.</p>
         </div>
 
+        <figure class="figure">
+          <div class="linkedin-chart">
+            <div class="chart-stats">
+              <div class="chart-stat">
+                <div class="chart-stat-value">33.5k</div>
+                <div class="chart-stat-label">Total impressions</div>
+              </div>
+              <div class="chart-stat">
+                <div class="chart-stat-value">46</div>
+                <div class="chart-stat-label">Posts</div>
+              </div>
+              <div class="chart-stat">
+                <div class="chart-stat-value">10%</div>
+                <div class="chart-stat-label">Avg engagement</div>
+              </div>
+              <div class="chart-stat">
+                <div class="chart-stat-value">+298</div>
+                <div class="chart-stat-label">New followers</div>
+              </div>
+            </div>
+
+            <div class="chart-body">
+              <div class="chart-callout">
+                <div class="chart-callout-label">Top post</div>
+                <div class="chart-callout-text">Events Committee announcement<br><span>1,635 impressions · 21.8% engagement</span></div>
+              </div>
+
+              <div class="chart-bars">
+                <div class="chart-bar-wrap"><div class="chart-bar" style="height: 30%;"></div><div class="chart-month">Jun<br><span>'25</span></div></div>
+                <div class="chart-bar-wrap"><div class="chart-bar highlight" style="height: 76%;"></div><div class="chart-month">Jul<br><span>'25</span></div></div>
+                <div class="chart-bar-wrap"><div class="chart-bar" style="height: 40%;"></div><div class="chart-month">Aug<br><span>'25</span></div></div>
+                <div class="chart-bar-wrap"><div class="chart-bar" style="height: 36%;"></div><div class="chart-month">Sep<br><span>'25</span></div></div>
+                <div class="chart-bar-wrap"><div class="chart-bar" style="height: 32%;"></div><div class="chart-month">Oct<br><span>'25</span></div></div>
+                <div class="chart-bar-wrap"><div class="chart-bar" style="height: 64%;"></div><div class="chart-month">Nov<br><span>'25</span></div></div>
+                <div class="chart-bar-wrap"><div class="chart-bar" style="height: 36%;"></div><div class="chart-month">Dec<br><span>'25</span></div></div>
+                <div class="chart-bar-wrap"><div class="chart-bar" style="height: 40%;"></div><div class="chart-month">Jan<br><span>'26</span></div></div>
+                <div class="chart-bar-wrap"><div class="chart-bar" style="height: 48%;"></div><div class="chart-month">Feb<br><span>'26</span></div></div>
+                <div class="chart-bar-wrap"><div class="chart-bar" style="height: 56%;"></div><div class="chart-month">Mar<br><span>'26</span></div></div>
+                <div class="chart-bar-wrap"><div class="chart-bar" style="height: 60%;"></div><div class="chart-month">Apr<br><span>'26</span></div></div>
+                <div class="chart-bar-wrap"><div class="chart-bar" style="height: 100%;"></div><div class="chart-month">May<br><span>'26</span></div></div>
+                <div class="chart-bar-wrap"><div class="chart-bar" style="height: 52%;"></div><div class="chart-month">Jun<br><span>'26</span></div></div>
+              </div>
+            </div>
+
+            <div class="chart-note">
+              <span class="chart-note-label">Insight from the marketing review:</span> early-campaign content (Jun–Nov 2025) consistently outperformed content closer to the event. Community-first posts introducing people beat generic promotional content in every measurable dimension.
+            </div>
+          </div>
+          <figcaption>LinkedIn campaign performance across the 12-month build. Bar height reflects monthly reach. Full campaign review delivered to the client in June 2026 with recommendations for 2027.</figcaption>
+        </figure>
+
         <h4>What changed</h4>
         <div class="metrics">
           <div class="metric">
@@ -668,7 +1437,7 @@
 
         <div class="approach">
           <p class="approach-label">How I approach it</p>
-          <blockquote>"When the strategy works, it's invisible. Keeping the client out of the frame was the right call, and every piece of marketing had to protect it. You just look like a community, which was the whole point."</blockquote>
+          <blockquote>"The client couldn't be in the spotlight, which meant every post had to earn the community feel. When community-first content outperformed everything else in the campaign, that told me the call was right."</blockquote>
         </div>
       </article>
     </section>
@@ -712,6 +1481,7 @@
 
     <footer>
       <p>Alyssa Serignese · Central Otago, NZ</p>
+      <p class="footer-ai">This site was built using AI. The words and strategy are all mine.</p>
       <p>© 2026</p>
     </footer>
   </div>
